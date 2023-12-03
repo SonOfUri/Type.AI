@@ -13,8 +13,8 @@ const scene = new THREE.Scene();
 const gltfLoader = new GLTFLoader();
 const frustumSize = 534;
 const uvsArray = new Float32Array([1, 1, 0, 1, 0, 0, 1, 0]);
-const objectUrl = '../3d/chainGPT_robo_BAKED_CYCLE.glb';
-const envMapUrl = '../3d/Cannon_Exterior.hdr';
+const objectUrl = 'https://web-assets.chaingpt.org/assets/3d/chainGPT_robo_BAKED_CYCLE.glb';
+const envMapUrl = 'https://web-assets.chaingpt.org/assets/3d/Cannon_Exterior.hdr';
 const buttonClickDelay = 6.5;
 
 // mouse interaction variables
