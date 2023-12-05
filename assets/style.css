@@ -4463,7 +4463,7 @@ li {
 .slide {
     max-width: 460px;
     border: 1px solid var(--black);
-    background-color: var(--white);
+    background-color: var(--black);
     margin-right: 40px;
     padding: 18px;
     overflow: visible;
@@ -7905,7 +7905,7 @@ li {
 .vid_slide {
     max-width: 460px;
     border: 1px solid var(--black);
-    background-color: var(--white);
+    background-color: var(-black);
     margin-top: 0;
     margin-right: 40px;
     padding: 5px;
