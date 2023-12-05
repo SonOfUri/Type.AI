@@ -23,6 +23,10 @@
     <meta content="xDyyV48PXV5s0V2irP4_yitW5RSBkCHaCgLGz_UB4TY" name="google-site-verification" />
     <link href="/assets/style.css" rel="stylesheet" type="text/css" />
     <style>
+
+        .webgl canvas{
+            display: none !important;
+        }
         @media (min-width: 992px) {
             html.w-mod-js:not(.w-mod-ix) [data-w-id="da52946c-a4c6-114f-c5f2-cbcfb26bca68"] {
                 opacity: 0;
@@ -1187,7 +1191,7 @@
 </head>
 
 <body class="home-page">
-    <!-- <div data-w-id="36bff90b-9580-48dd-69d4-53229d1950b1" style="display: flex" class="page-loader">
+    <div data-w-id="36bff90b-9580-48dd-69d4-53229d1950b1" style="display: flex" class="page-loader">
         <div class="loader-lottie">
             <img src="/assets/loading.gif" alt="" />
         </div>
@@ -1224,7 +1228,7 @@
             loading="lazy" alt="" class="loader-arrow" /><img
             src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6436bdb39b7ca6101e1a307d_ico-indicator-light.svg"
             loading="lazy" alt="" class="loader-arrow loader-arrow-left" />
-    </div> -->
+    </div>
     <div class="vertical-line vertical-line--left"></div>
     <div class="vertical-line vertical-line--center"></div>
     <div class="vertical-line vertical-line--right"></div>
@@ -2333,70 +2337,7 @@
                     class="token-sub-intro-col token-sub-more"></div>
             </div>
         </div>
-        <div class="w-embed w-script">
-            <script>
-                /* selectContract */
-                function selectContract() {
-                    let selectBtns = document.querySelectorAll(".js-select-contract");
-                    let toggleContractDropdown = document.querySelector(
-                        ".js-toggle-contract-dropdown"
-                    );
-                    let contractDropdown = document.querySelector(
-                        ".js-contract-dropdown"
-                    );
-
-                    if (selectBtns) {
-                        toggleContractDropdown.addEventListener("click", function (e) {
-                            e.preventDefault();
-                            if (contractDropdown.classList.contains("is-open")) {
-                                contractDropdown.classList.remove("is-open");
-                                toggleContractDropdown.classList.remove("is-active");
-                            } else {
-                                contractDropdown.classList.add("is-open");
-                                toggleContractDropdown.classList.add("is-active");
-                            }
-                        });
-
-                        selectBtns.forEach((selectBtn) => {
-                            selectBtn.addEventListener("click", function (e) {
-                                e.preventDefault();
-                                let copyId = selectBtn.getAttribute("data-code-option");
-                                let copyText = document.querySelector(
-                                    "[data-copied='" + copyId + "']"
-                                );
-                                let copyTextValue = copyText.value;
-                                let copyTextFeat =
-                                    document.querySelector("[data-copied='00']");
-                                let selectedOptionThumb = selectBtn.querySelector(
-                                    ".copy-company-thumb"
-                                ).innerHTML;
-                                let selectedOptionName = selectBtn.querySelector(
-                                    ".copy-code-label.hide-in-mobile"
-                                ).innerHTML;
-                                let selectedOptionNameMob = selectBtn.querySelector(
-                                    ".copy-code-label.show-in-mobile"
-                                ).innerHTML;
-                                document.querySelector(
-                                    ".contractor-feat .copy-company-thumb"
-                                ).innerHTML = selectedOptionThumb;
-                                document.querySelector(
-                                    ".contractor-feat .copy-code-label.hide-in-mobile"
-                                ).innerHTML = selectedOptionName;
-                                document.querySelector(
-                                    ".contractor-feat .copy-code-label.show-in-mobile"
-                                ).innerHTML = selectedOptionNameMob;
-                                copyTextFeat.setAttribute("value", copyTextValue);
-                                if (contractDropdown.classList.contains("is-open")) {
-                                    contractDropdown.classList.remove("is-open");
-                                    toggleContractDropdown.classList.remove("is-active");
-                                }
-                            });
-                        });
-                    }
-                }
-                selectContract();
-            </script>
-        </div>
+        
     </div>
 
     <style>
@@ -2993,12 +2934,12 @@
                     </div>
                 </div>
             </div>
-            <div class="container-middle">
+            <!-- <div class="container-middle">
                 <div class="roadmap-intro-thumb">
                     <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/65685205c7249ff1f0975fcf_roadmap.webp"
                         loading="lazy" alt="" class="roadmap-intro-thumb-img" />
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="roadmap-slider-block">
             <div class="roadmap-frame">
@@ -3013,22 +2954,22 @@
                                         <div class="roadmap-card-pre-title">
                                             <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6436bdb39b7ca6101e1a307d_ico-indicator-light.svg"
                                                 loading="lazy" alt="" class="roadmap-card-pre-icon" />
-                                            <div class="roadmap-card-pre-title-text">RDMP 01</div>
+                                            <div class="roadmap-card-pre-title-text">PHASE 01</div>
                                         </div>
                                     </div>
-                                    <div class="roadmap-card-head-item roadmap-card-status">
+                                    <!-- <div class="roadmap-card-head-item roadmap-card-status">
                                         <div class="roadmap-card-status-text">Starts Soon</div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="roadmap-card-subhead">
-                                    <div>2024-2025 Initiative</div>
+                                    <div>[Date]] Initiative</div>
                                 </div>
                                 <div class="roadmap-card-body">
-                                    <div class="roadmap-more-items">
+                                    <!-- <div class="roadmap-more-items">
                                         <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/65688365501249abd807f646_ico-plus-color.svg"
                                             loading="lazy" alt="" class="roadmap-more-icon" />
                                         <div>and 3 more items</div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="roadmap-card-btn-wrap">
                                     <a scramble-link="" rel="noopener noreferrer nofollow" href="#link" target="_blank"
@@ -3063,7 +3004,7 @@
                                 <div class="roadmap-card-pre-title">
                                     <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6436bdb39b7ca6101e1a307d_ico-indicator-light.svg"
                                         loading="lazy" alt="" class="roadmap-card-pre-icon" />
-                                    <div class="roadmap-card-pre-title-text">RDMP</div>
+                                    <div class="roadmap-card-pre-title-text">PHASE</div>
                                 </div>
                             </div>
                             <div class="roadmap-card-head-item roadmap-card-status">
@@ -3073,37 +3014,24 @@
                             </div>
                         </div>
                         <div class="roadmap-card-subhead">
-                            <div>2024-2025 Initiative</div>
+                            <div>[Date] Initiative</div>
                         </div>
                         <div class="roadmap-card-body">
                             <div class="w-richtext">
                                 <ul role="list">
                                     <li>
-                                        Creation of a bespoke Layer-1 blockchain meticulously
-                                        designed for the training and execution of AI models
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, facere?
                                     </li>
                                     <li>
-                                        Grant program incentivizes projects within the ChainGPT
-                                        chain ecosystem
+                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, in!
                                     </li>
                                 </ul>
                             </div>
-                            <div class="roadmap-more-items">
-                                <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/65688365501249abd807f646_ico-plus-color.svg"
-                                    loading="lazy" alt="" class="roadmap-more-icon" />
-                                <div>and</div>
-                                <div>3</div>
-                                <div>more items</div>
-                            </div>
+                            
+                        
                         </div>
                     </div>
-                    <div class="roadmap-card-btn-wrap">
-                        <a scramble-link="" rel="noopener noreferrer nofollow"
-                            href="https://docs.chaingpt.org/overview/road-map/2024-2025-initiative" target="_blank"
-                            class="btn-secondary _w-100 w-inline-block">
-                            <div scramble-text="">MORE DETAILS</div>
-                        </a>
-                    </div>
+                    
                 </div>
                 <div role="listitem" class="w-dyn-item">
                     <div class="roadmap-card">
@@ -3112,91 +3040,32 @@
                                 <div class="roadmap-card-pre-title">
                                     <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6436bdb39b7ca6101e1a307d_ico-indicator-light.svg"
                                         loading="lazy" alt="" class="roadmap-card-pre-icon" />
-                                    <div class="roadmap-card-pre-title-text">RDMP</div>
+                                    <div class="roadmap-card-pre-title-text">PHASE</div>
                                 </div>
                             </div>
                             <div class="roadmap-card-head-item roadmap-card-status">
-                                <div class="roadmap-card-status-text">In Progress</div>
-                                <div class="roadmap-status-border"></div>
-                                <div class="roadmap-status-border roadmap-status-border--soon w-condition-invisible">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="roadmap-card-subhead">
-                            <div>2023: Q3-Q4</div>
-                        </div>
-                        <div class="roadmap-card-body">
-                            <div class="w-richtext">
-                                <ul role="list">
-                                    <li>AI NFT Generator DApp powered by ChainGPT</li>
-                                    <li>ChainGPT Pad: An AI-focused Launchpad</li>
-                                    <li>ChainGPT V1 Web-Application (Crypto AI Hub)</li>
-                                    <li>ChainGPT AI on Discord (v1 release)</li>
-                                    <li>Mobile App Release</li>
-                                </ul>
-                            </div>
-                            <div class="roadmap-more-items">
-                                <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/65688365501249abd807f646_ico-plus-color.svg"
-                                    loading="lazy" alt="" class="roadmap-more-icon" />
-                                <div>and</div>
-                                <div>41</div>
-                                <div>more items</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="roadmap-card-btn-wrap">
-                        <a scramble-link="" rel="noopener noreferrer nofollow"
-                            href="https://docs.chaingpt.org/overview/road-map/2023-q3-q4" target="_blank"
-                            class="btn-secondary _w-100 w-inline-block">
-                            <div scramble-text="">MORE DETAILS</div>
-                        </a>
-                    </div>
-                </div>
-                <div role="listitem" class="w-dyn-item">
-                    <div class="roadmap-card">
-                        <div class="roadmap-card-head">
-                            <div class="roadmap-card-head-item">
-                                <div class="roadmap-card-pre-title">
-                                    <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6436bdb39b7ca6101e1a307d_ico-indicator-light.svg"
-                                        loading="lazy" alt="" class="roadmap-card-pre-icon" />
-                                    <div class="roadmap-card-pre-title-text">RDMP</div>
-                                </div>
-                            </div>
-                            <div class="roadmap-card-head-item roadmap-card-status">
-                                <div class="roadmap-card-status-text">Completed</div>
+                                <div class="roadmap-card-status-text">Starts Soon</div>
                                 <div class="roadmap-status-border w-condition-invisible"></div>
-                                <div class="roadmap-status-border roadmap-status-border--soon w-condition-invisible">
-                                </div>
+                                <div class="roadmap-status-border roadmap-status-border--soon"></div>
                             </div>
                         </div>
                         <div class="roadmap-card-subhead">
-                            <div>2023: Q1-Q2</div>
+                            <div>[Date] Initiative</div>
                         </div>
                         <div class="roadmap-card-body">
                             <div class="w-richtext">
                                 <ul role="list">
-                                    <li>AI Chatbot Prototype Release</li>
-                                    <li>Staking &amp; Farming</li>
-                                    <li>ChainGPT AI on Telegram Release</li>
-                                    <li>DAO Voting System</li>
-                                    <li>$CGPT Token Release &amp; Tokenomics</li>
+                                    <li>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, facere?
+                                    </li>
+                                    <li>
+                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, in!
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="roadmap-more-items">
-                                <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/65688365501249abd807f646_ico-plus-color.svg"
-                                    loading="lazy" alt="" class="roadmap-more-icon" />
-                                <div>and</div>
-                                <div>19</div>
-                                <div>more items</div>
-                            </div>
+                            
+                        
                         </div>
-                    </div>
-                    <div class="roadmap-card-btn-wrap">
-                        <a scramble-link="" rel="noopener noreferrer nofollow"
-                            href="https://docs.chaingpt.org/overview/road-map/2023-q1-q2" target="_blank"
-                            class="btn-secondary _w-100 w-inline-block">
-                            <div scramble-text="">MORE DETAILS</div>
-                        </a>
                     </div>
                 </div>
                 <div role="listitem" class="w-dyn-item">
@@ -3206,44 +3075,67 @@
                                 <div class="roadmap-card-pre-title">
                                     <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6436bdb39b7ca6101e1a307d_ico-indicator-light.svg"
                                         loading="lazy" alt="" class="roadmap-card-pre-icon" />
-                                    <div class="roadmap-card-pre-title-text">RDMP</div>
+                                    <div class="roadmap-card-pre-title-text">PHASE</div>
                                 </div>
                             </div>
                             <div class="roadmap-card-head-item roadmap-card-status">
-                                <div class="roadmap-card-status-text">Completed</div>
+                                <div class="roadmap-card-status-text">Starts Soon</div>
                                 <div class="roadmap-status-border w-condition-invisible"></div>
-                                <div class="roadmap-status-border roadmap-status-border--soon w-condition-invisible">
-                                </div>
+                                <div class="roadmap-status-border roadmap-status-border--soon"></div>
                             </div>
                         </div>
                         <div class="roadmap-card-subhead">
-                            <div>2022: Q3-Q4</div>
+                            <div>[Date] Initiative</div>
                         </div>
                         <div class="roadmap-card-body">
                             <div class="w-richtext">
                                 <ul role="list">
-                                    <li>Team Formation</li>
-                                    <li>Proof of Concept</li>
-                                    <li>$CGPT Token Design and Burn Mechanism</li>
-                                    <li>Advanced AI Model Development</li>
-                                    <li>Development of a Web3 AI Chatbot</li>
+                                    <li>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, facere?
+                                    </li>
+                                    <li>
+                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, in!
+                                    </li>
                                 </ul>
                             </div>
-                            <div class="roadmap-more-items">
-                                <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/65688365501249abd807f646_ico-plus-color.svg"
-                                    loading="lazy" alt="" class="roadmap-more-icon" />
-                                <div>and</div>
-                                <div>9</div>
-                                <div>more items</div>
-                            </div>
+                            
+                        
                         </div>
                     </div>
-                    <div class="roadmap-card-btn-wrap">
-                        <a scramble-link="" rel="noopener noreferrer nofollow"
-                            href="https://docs.chaingpt.org/overview/road-map/2022-q3-q4" target="_blank"
-                            class="btn-secondary _w-100 w-inline-block">
-                            <div scramble-text="">MORE DETAILS</div>
-                        </a>
+                </div>
+                <div role="listitem" class="w-dyn-item">
+                    <div class="roadmap-card">
+                        <div class="roadmap-card-head">
+                            <div class="roadmap-card-head-item">
+                                <div class="roadmap-card-pre-title">
+                                    <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6436bdb39b7ca6101e1a307d_ico-indicator-light.svg"
+                                        loading="lazy" alt="" class="roadmap-card-pre-icon" />
+                                    <div class="roadmap-card-pre-title-text">PHASE</div>
+                                </div>
+                            </div>
+                            <div class="roadmap-card-head-item roadmap-card-status">
+                                <div class="roadmap-card-status-text">Starts Soon</div>
+                                <div class="roadmap-status-border w-condition-invisible"></div>
+                                <div class="roadmap-status-border roadmap-status-border--soon"></div>
+                            </div>
+                        </div>
+                        <div class="roadmap-card-subhead">
+                            <div>[Date] Initiative</div>
+                        </div>
+                        <div class="roadmap-card-body">
+                            <div class="w-richtext">
+                                <ul role="list">
+                                    <li>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, facere?
+                                    </li>
+                                    <li>
+                                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, in!
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3658,7 +3550,8 @@
       }
     </script>
     <!-- <script src="https://type-ai-nu.vercel.app/web-assets/assets/js/main-home.js" type="module" async></script> -->
-    <script src="asasets/main-home.js" type="module" async></script>
+    <script src='https://web-assets.chaingpt.org/assets/js/main-home.js' type='module' async></script>
+
 
     <!---
 <script>
