@@ -5,10 +5,15 @@ html {
 }
 
 h1,h2,h3,h4,h5,h6,p,a,span,.xyz, .xyz-2>div, strong{
-    background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%); 
+    /* background: linear-gradient(to bottom, #cfc09f 22%,#634f2c 24%, #cfc09f 26%, #cfc09f 27%,#ffecb3 40%,#3a2c0f 78%); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #fff;
+    color: #fff; */
+    background: #fceabb;
+background: -webkit-linear-gradient(-45deg, #fceabb 0%,#f8b500 0%,#f8b500 17%,#fbdf93 28%,#f8b500 45%,#f8b500 60%,#fbdf93 75%,#fbdf93 75%,#f8b500 100%,#fbdf93 100%);
+background: linear-gradient(135deg, #fceabb 0%,#f2a100 0%,#f8b500 17%,#f9d16b 28%,#f8b500 37%,#f49600 52%,#f8b500 69%,#f9d67c 86%,#f8b500 100%,#efaf00 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
 }
 
 .u-class-1{
@@ -8351,7 +8356,9 @@ li {
 }
 .hero-slider-wrap {
     height: 85px;
-    border: 1px solid #efefe5;
+    /* border-bottom: 1px solid #efefe5;
+    border-right: 1px solid #efefe5; */
+
     position: relative;
     overflow: visible;
 }
