@@ -10,7 +10,7 @@ const gltfLoader = new GLTFLoader();
 const frustumSize = 534;
 const uvsArray = new Float32Array([1, 1, 0, 1, 0, 0, 1, 0]);
 // const objectUrl = 'https://web-assets.chaingpt.org/assets/3d/chainGPT_robo_BAKED_CYCLE.glb';
-const objectUrl = 'assets/3d/golden.glb';
+const objectUrl = 'assets/3d/old.glb';
 const envMapUrl = 'https://web-assets.chaingpt.org/assets/3d/Cannon_Exterior.hdr';
 const buttonClickDelay = 6.5;
 
