@@ -9,7 +9,8 @@ const scene = new THREE.Scene();
 const gltfLoader = new GLTFLoader();
 const frustumSize = 534;
 const uvsArray = new Float32Array([1, 1, 0, 1, 0, 0, 1, 0]);
-const objectUrl = 'https://web-assets.chaingpt.org/assets/3d/chainGPT_robo_BAKED_CYCLE.glb';
+// const objectUrl = 'https://web-assets.chaingpt.org/assets/3d/chainGPT_robo_BAKED_CYCLE.glb';
+const objectUrl = 'assets/3d/golden.glb';
 const envMapUrl = 'https://web-assets.chaingpt.org/assets/3d/Cannon_Exterior.hdr';
 const buttonClickDelay = 6.5;
 
@@ -84,22 +85,22 @@ scene.add(light);
 
 gltfLoader.load(objectUrl, (gltf) => {
 bakedMesh = gltf.scene;
-const screenMesh = bakedMesh.getObjectByName('FACE');
+// const screenMesh = bakedMesh.getObjectByName('FACE');
 headMesh = bakedMesh.getObjectByName('mixamorigHead');
 headInitialRotation.copy(headMesh.rotation);
 
-screenMesh.geometry.setAttribute('uv', new THREE.BufferAttribute(uvsArray, 2));
-screenMesh.material = shaderMaterial.clone();
-screenMesh.material.uniforms = {
-  videoTexture: { type: 'sampler2D', value: eyeTexture }
-};
+// screenMesh.geometry.setAttribute('uv', new THREE.BufferAttribute(uvsArray, 2));
+// screenMesh.material = shaderMaterial.clone();
+// screenMesh.material.uniforms = {
+//   videoTexture: { type: 'sampler2D', value: eyeTexture }
+// };
 
-const buttonMesh = bakedMesh.getObjectByName('TOUCH');
-buttonMesh.geometry.setAttribute('uv', new THREE.BufferAttribute(uvsArray, 2));
-buttonMesh.material = shaderMaterial.clone();
-buttonMesh.material.uniforms = {
-  videoTexture: { type: 'sampler2D', value: clickTexture }
-};
+// const buttonMesh = bakedMesh.getObjectByName('TOUCH');
+// buttonMesh.geometry.setAttribute('uv', new THREE.BufferAttribute(uvsArray, 2));
+// buttonMesh.material = shaderMaterial.clone();
+// buttonMesh.material.uniforms = {
+//   videoTexture: { type: 'sampler2D', value: clickTexture }
+// };
 
 if (gltf.animations.length) {
   mixer = new THREE.AnimationMixer(gltf.scene);
@@ -457,21 +458,21 @@ if (isProducts) {
   });
 }
 
-updateEyesPos(e);
+// updateEyesPos(e);
 
 updatePointsData();
 });
 
-const updateEyesPos = (e) => {
-  const pupils = document.querySelector('.pupils');
-  const rect = pupils.getBoundingClientRect();
-  if (rect.top > window.innerHeight) {
-    return;
-  }
-  const x = (e.clientX - rect.left) / 40 + "px";
-  const y = (e.clientY - rect.top) / 15 + "px";
-  pupils.style.transform = "translate3d(" + x + "," + y + ", 0px)";
-}
+// const updateEyesPos = (e) => {
+//   const pupils = document.querySelector('.pupils');
+//   const rect = pupils.getBoundingClientRect();
+//   if (rect.top > window.innerHeight) {
+//     return;
+//   }
+//   const x = (e.clientX - rect.left) / 40 + "px";
+//   const y = (e.clientY - rect.top) / 15 + "px";
+//   pupils.style.transform = "translate3d(" + x + "," + y + ", 0px)";
+// }
 
 window.addEventListener("resize", () => {
 // Update camera
