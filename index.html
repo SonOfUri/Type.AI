@@ -595,7 +595,8 @@
             .custom-slider-arrow--top.w-slider-arrow-left,
             .custom-slider-arrow--top.w-slider-arrow-right {
                 top: 100%;
-                border-bottom: 1px solid #353539;
+                    /* border-bottom: 1px solid #353539; */
+
             }
 
             .custom-slider-arrow--top.w-slider-arrow-left {
@@ -1238,8 +1239,8 @@
             src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6436bdb39b7ca6101e1a307d_ico-indicator-light.svg"
             loading="lazy" alt="" class="loader-arrow loader-arrow-left" /> -->
     </div>
-    
-    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
+
+    <!-- <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease"
         role="banner" class="navbar-4 site-header w-nav">
         <div class="header-container">
             <div class="header-side-part hsp--left">
@@ -1325,15 +1326,150 @@
                     </div>
                 </a>
             </div>
-            <!-- <div class="vertical-line vertical-line--left vertical-line-header"></div>
-            <div class="vertical-line vertical-line--right vertical-line-header"></div> -->
         </div>
-    </div>
+    </div> -->
+
+    <style>
+        .clear {
+            clear: both;
+        }
+
+
+        .slide-toggle {
+            display: none;
+        }
+
+        .slidemenu {
+            font-family: arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+
+        .slidemenu label {
+            width: 25%;
+            text-align: center;
+            display: block;
+            float: left;
+            color: #333;
+            opacity: 0.2;
+
+        }
+
+        .slidemenu label:hover {
+            cursor: pointer;
+            color: #666;
+        }
+
+        .slidemenu label span {
+            display: block;
+            padding: 10px;
+        }
+
+        .slidemenu label .icon {
+            font-size: 20px;
+            border: solid 2px #333;
+            text-align: center;
+            height: 50px;
+            width: 50px;
+            display: block;
+            margin: 0 auto;
+            line-height: 50px;
+            border-radius: 50%;
+        }
+
+        /*Bar Style*/
+
+        .slider {
+            width: 100%;
+            height: 5px;
+            display: block;
+            /* background: #ccc; */
+            background: -webkit-linear-gradient(-45deg, #fceabb 0%, #f8b500 0%, #f8b500 17%, #fbdf93 28%, #f8b500 45%, #f8b500 60%, #fbdf93 75%, #fbdf93 75%, #f8b500 100%, #fbdf93 100%);
+            background: linear-gradient(135deg, #fceabb 0%, #f2a100 0%, #f8b500 17%, #f9d16b 28%, #f8b500 37%, #f49600 52%, #f8b500 69%, #f9d67c 86%, #f8b500 100%, #efaf00 100%);
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .slider .bar {
+            width: 25%;
+            height: 5px;
+            background: #333;
+            border-radius: 5px;
+        }
+
+        /*Animations*/
+        .slidemenu label,
+        .slider .bar {
+            transition: all 500ms ease-in-out;
+            -webkit-transition: all 500ms ease-in-out;
+            -moz-transition: all 500ms ease-in-out;
+        }
+
+        /*Toggle*/
+
+        .slidemenu .slide-toggle:checked+label {
+            opacity: 1;
+        }
+
+
+
+        .slidemenu #slide-item-1:checked~.slider .bar {
+            margin-left: 0;
+        }
+
+        .slidemenu #slide-item-2:checked~.slider .bar {
+            margin-left: 25%;
+        }
+
+        .slidemenu #slide-item-3:checked~.slider .bar {
+            margin-left: 50%;
+        }
+
+        .slidemenu #slide-item-4:checked~.slider .bar {
+            margin-left: 75%;
+        }
+    </style>
+
+    <nav class="slidemenu">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!-- Item 1 -->
+        <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle" checked />
+        <label for="slide-item-1">
+            <p class="icon"><i class='bx bx-home'></i></p><span>Home</span>
+        </label>
+
+        <!-- Item 2 -->
+        <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle" />
+        <label for="slide-item-2">
+            <p class="icon"><i class='bx bxs-info-circle' ></i></p><span>About</span>
+        </label>
+
+        <!-- Item 3 -->
+        <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle" />
+        <label for="slide-item-3">
+            <p class="icon"><i class='bx bxl-codepen'></i></p><span>Solutions</span>
+        </label>
+
+        <!-- Item 4 -->
+        <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle" />
+        <label for="slide-item-4">
+            <p class="icon"><i class='bx bxs-message-square-dots' ></i></p><span>Socials</span>
+        </label>
+
+        <div class="clear"></div>
+
+        <!-- Bar -->
+        <div class="slider">
+            <div class="bar"></div>
+        </div>
+
+    </nav>
 
     <div class="webgl"></div>
 
 
-    <div class="eye-video w-embed">
+    <!-- <div class="eye-video w-embed">
         <video id="eye-video" crossorigin="anonymous" playsinline="" autoplay="" muted="" loop="" width="100%"
             style="display: none">
             <source src="https://web-assets.chaingpt.org/assets/video/animations/eyes_video-transcode.mp4" />
@@ -1345,7 +1481,7 @@
             <source src="https://web-assets.chaingpt.org/assets/video/animations/touch_video-transcode.mp4" />
             <source src="https://web-assets.chaingpt.org/assets/video/animations/touch_video-transcode.webm" />
         </video>
-    </div>
+    </div> -->
     <div id="intro" data-w-id="609a62dd-47cd-8bad-6657-b9f754fea2ad" class="hero">
         <div data-w-id="609a62dd-47cd-8bad-6657-b9f754fea2ae" class="container hero-flex-container">
             <div class="container-middle">
@@ -1631,9 +1767,7 @@
                         </div>
                     </div>
                 </div>
-                <div data-w-id="da52946c-a4c6-114f-c5f2-cbcfb26bca6d" class="product-track-slogan">
-                    For Everyone!
-                </div>
+                
             </div>
             <div class="product-descr-shadow"></div>
         </div>
@@ -1670,14 +1804,14 @@
                     <div class="solutions-cols">
                         <div class="solutions-col solutions-col--left">
                             <div class="solutions-row-heading">
-                                <h3 class="solutions-row-title">ChainGPT <br />Chatbot</h3>
+                                <h3 class="solutions-row-title">TypeAI <br />Chatbot</h3>
                             </div>
                             <div class="solutions-image-wrap-mobile"><img
                                     src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/64abde291a2bcc0e558dbc20_solution-placeholder.png"
                                     alt="Solution Placeholder" width="315" height="315"
                                     class="solutions-image-mobile" /></div>
                             <div class="solutions-row-descr">
-                                <p class="paragraph-6">Reliable &amp; Fast Source of Information. Ask ChainGPT Al any
+                                <p class="paragraph-6">Reliable &amp; Fast Source of Information. Ask TypeAI Al any
                                     question related to Blockchain and Crypto. The AI can answer general and technical
                                     questions.</p>
                             </div>
@@ -1689,22 +1823,16 @@
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
-                                    <a scramble-link="" rel="noopener noreferrer" href="https://app.chaingpt.org/"
+                                    <a scramble-link="" rel="noopener noreferrer" href="#"
                                         target="_blank" class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">TRY IN WEB APP</div><img
-                                            src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6437b8bc549a694211710a04_arrow-right-color.svg"
-                                            loading="lazy" alt="Top Right Arrow Neon"
-                                            class="link-more-icon link-more-icon--sm" />
+                                        <div scramble-text="">TRY IN WEB APP</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                                 <div class="solutions-actions-row">
                                     <a scramble-link="" rel="noopener noreferrer nofollow"
-                                        href="https://t.me/chaingptai_bot" target="_blank"
+                                        href="https://t.me/TypeAIai_bot" target="_blank"
                                         class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">TRY IN TELEGRAM</div><img
-                                            src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6437b8bc549a694211710a04_arrow-right-color.svg"
-                                            loading="lazy" alt="Top Right Arrow Neon"
-                                            class="link-more-icon link-more-icon--sm" />
+                                        <div scramble-text="">TRY IN TELEGRAM</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -1743,12 +1871,9 @@
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
-                                    <a scramble-link="" rel="noopener noreferrer" href="https://app.chaingpt.org/news"
+                                    <a scramble-link="" rel="noopener noreferrer" href="/assets/WHITEPAPER 23.pdf"
                                         target="_blank" class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">Read ai-generated news</div><img
-                                            src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6437b8bc549a694211710a04_arrow-right-color.svg"
-                                            loading="lazy" alt="Top Right Arrow Neon"
-                                            class="link-more-icon link-more-icon--sm" />
+                                        <div scramble-text="">Whitepaper</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -1788,12 +1913,9 @@
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
-                                    <a scramble-link="" rel="noopener noreferrer" href="https://app.chaingpt.org/"
+                                    <a scramble-link="" rel="noopener noreferrer" href="#"
                                         target="_blank" class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">TRY NOW</div><img
-                                            src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6437b8bc549a694211710a04_arrow-right-color.svg"
-                                            loading="lazy" alt="Top Right Arrow Neon"
-                                            class="link-more-icon link-more-icon--sm" />
+                                        <div scramble-text="">TRY NOW</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -1831,12 +1953,9 @@
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
-                                    <a scramble-link="" rel="noopener noreferrer" href="https://nft.chaingpt.org/"
+                                    <a scramble-link="" rel="noopener noreferrer" href="#"
                                         target="_blank" class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">TRY NOW</div><img
-                                            src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6437b8bc549a694211710a04_arrow-right-color.svg"
-                                            loading="lazy" alt="Top Right Arrow Neon"
-                                            class="link-more-icon link-more-icon--sm" />
+                                        <div scramble-text="">TRY NOW</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -1936,26 +2055,23 @@
                                     src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/64abde291a2bcc0e558dbc20_solution-placeholder.png"
                                     alt="" width="315" height="315" class="solutions-image-mobile" /></div>
                             <div class="solutions-row-descr">
-                                <p class="paragraph-6">Developers and businesses can integrate ChainGPT AI via its API
+                                <p class="paragraph-6">Developers and businesses can integrate TypeAI AI via its API
                                     &amp; SDK access. They can integrate a specific function or build a new application
                                     with our AI model. Thus, saving time, money, and resources required to
-                                    train an advanced model such as ChainGPT from scratch. </p>
+                                    train an advanced model such as TypeAI from scratch. </p>
                             </div>
                         </div>
                         <div class="solutions-col solutions-col--right">
                             <div class="solutions-feat-list">
                                 <div class="solutions-feat-item">API ACCESS</div>
-                                <div class="solutions-feat-item">CHAINGPT SDK</div>
+                                <div class="solutions-feat-item">TypeAI SDK</div>
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
                                     <a scramble-link="" rel="noopener noreferrer"
-                                        href="https://app.chaingpt.org/apidashboard" target="_blank"
+                                        href="#" target="_blank"
                                         class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">Enter API Dashbaord</div><img
-                                            src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6437b8bc549a694211710a04_arrow-right-color.svg"
-                                            loading="lazy" alt="Top Right Arrow Neon"
-                                            class="link-more-icon link-more-icon--sm" />
+                                        <div scramble-text="">Enter API Dashbaord</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -1975,13 +2091,13 @@
                     <div class="solutions-cols">
                         <div class="solutions-col solutions-col--left">
                             <div class="solutions-row-heading">
-                                <h3 class="solutions-row-title"> ChainGPT Pad</h3>
+                                <h3 class="solutions-row-title"> TypeAI Pad</h3>
                             </div>
                             <div class="solutions-image-wrap-mobile"><img
                                     src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/64abde291a2bcc0e558dbc20_solution-placeholder.png"
                                     alt="" width="315" height="315" class="solutions-image-mobile" /></div>
                             <div class="solutions-row-descr">
-                                <p class="paragraph-6">The future of Web3 AI starts here. ChainGPT Pad offers the
+                                <p class="paragraph-6">The future of Web3 AI starts here. TypeAI Pad offers the
                                     $CGPT token holders access to AI projects in early stages.</p>
                             </div>
                         </div>
@@ -1990,16 +2106,13 @@
                                 <div class="solutions-feat-item">Flexible Refund Policy</div>
                                 <div class="solutions-feat-item">Fair Tier System</div>
                                 <div class="solutions-feat-item">Handpicked Projects</div>
-                                <div class="solutions-feat-item">ChainGPT Incubations</div>
+                                <div class="solutions-feat-item">TypeAI Incubations</div>
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
-                                    <a scramble-link="" rel="noopener noreferrer" href="https://pad.chaingpt.org"
+                                    <a scramble-link="" rel="noopener noreferrer" href="#"
                                         target="_blank" class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">Enter ChainGPT Pad</div><img
-                                            src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6437b8bc549a694211710a04_arrow-right-color.svg"
-                                            loading="lazy" alt="Top Right Arrow Neon"
-                                            class="link-more-icon link-more-icon--sm" />
+                                        <div scramble-text="">Enter TypeAI Pad</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -2051,9 +2164,8 @@
                 <div data-w-id="6f5f6c7b-3264-eea2-cb3d-2b4a30205826" class="soliutions-image-track">
                     <div class="solutions-image-wrap">
                         <div data-w-id="58585682-9252-c6dc-e533-a42ab609af61" data-is-ix2-target="1"
-                            data-animation-type="lottie"
-                            data-src="/assets/3d/lottie.json"
-                            data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-duration="0">
+                            data-animation-type="lottie" data-src="/assets/3d/lottie.json" data-loop="0"
+                            data-direction="1" data-autoplay="0" data-renderer="svg" data-duration="0">
                         </div>
 
                         <!-- <model-viewer
@@ -2864,6 +2976,14 @@
             }
         });
     </script>
+    <style>
+        .breaker{
+            height: 250px !important;
+            display: block;
+        }
+    </style>
+
+    <dv class="breaker">&nbsp;</dv>
 
     <div id="roadmap" class="roadmap-section">
         <div class="container">
@@ -3507,7 +3627,7 @@
         }
       }
     </script>
-    <!-- <script src='https://web-assets.chaingpt.org/assets/js/main-home.js' type='module' async></script> -->
+    <!-- <script src='https://web-assets.ChainGPT.org/assets/js/main-home.js' type='module' async></script> -->
     <script src='/assets/js/main-home.js' type='module' async></script>
 
 

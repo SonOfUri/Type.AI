@@ -10,7 +10,7 @@ const gltfLoader = new GLTFLoader();
 const frustumSize = 534;
 const uvsArray = new Float32Array([1, 1, 0, 1, 0, 0, 1, 0]);
 // const objectUrl = 'https://web-assets.chaingpt.org/assets/3d/chainGPT_robo_BAKED_CYCLE.glb';
-const objectUrl = 'assets/3d/old.glb';
+const objectUrl = 'assets/3d/golden.glb';
 const envMapUrl = 'https://web-assets.chaingpt.org/assets/3d/Cannon_Exterior.hdr';
 const buttonClickDelay = 6.5;
 
@@ -38,22 +38,22 @@ products: {
 }
 }
 
-// shader stuff
-const eyeVideo = document.getElementById('eye-video');
-eyeVideo.play();
-const eyeTexture = new THREE.VideoTexture(eyeVideo);
-eyeTexture.minFilter = THREE.LinearFilter;
-eyeTexture.magFilter = THREE.LinearFilter;
-eyeTexture.format = THREE.RGBAFormat;
+// // shader stuff
+// const eyeVideo = document.getElementById('eye-video');
+// eyeVideo.play();
+// const eyeTexture = new THREE.VideoTexture(eyeVideo);
+// eyeTexture.minFilter = THREE.LinearFilter;
+// eyeTexture.magFilter = THREE.LinearFilter;
+// eyeTexture.format = THREE.RGBAFormat;
 
-const clickVideo = document.getElementById('click-video');
-const clickTexture = new THREE.VideoTexture(clickVideo);
-clickTexture.minFilter = THREE.LinearFilter;
-clickTexture.magFilter = THREE.LinearFilter;
-clickTexture.format = THREE.RGBAFormat;
-clickVideo.onplay = () => {
-setTimeout(changeSlide, 200);
-}
+// const clickVideo = document.getElementById('click-video');
+// const clickTexture = new THREE.VideoTexture(clickVideo);
+// clickTexture.minFilter = THREE.LinearFilter;
+// clickTexture.magFilter = THREE.LinearFilter;
+// clickTexture.format = THREE.RGBAFormat;
+// clickVideo.onplay = () => {
+// setTimeout(changeSlide, 200);
+// }
 
 const shaderMaterial = new THREE.ShaderMaterial( {
 vertexShader: document.getElementById( 'vertexShader' ).textContent,
@@ -211,14 +211,14 @@ mixer?.update(mixerUpdateDelta);
 window.requestAnimationFrame(tick);
 };
 
-eyeVideo.addEventListener('timeupdate', (e) => {
-if (eyeVideo.currentTime >= 2.5 && !isTestimonials) {
-  eyeVideo.currentTime = 0;
-}
-if (animationAction && animationAction.time >= buttonClickDelay && animationAction.time <= buttonClickDelay + 0.5) {
-  clickVideo.play();
-}
-});
+// eyeVideo.addEventListener('timeupdate', (e) => {
+// if (eyeVideo.currentTime >= 2.5 && !isTestimonials) {
+//   eyeVideo.currentTime = 0;
+// }
+// if (animationAction && animationAction.time >= buttonClickDelay && animationAction.time <= buttonClickDelay + 0.5) {
+//   clickVideo.play();
+// }
+// });
 
 const getMouseDegrees = (x, y, degreeLimit) => {
 let dx = 0,
@@ -297,23 +297,23 @@ ScrollTrigger.create({
   }
 });
 
-ScrollTrigger.create({
-  trigger: '.reviews-section',
-  start: 'top 70%',
-  onEnter: () => {
-    isTestimonials = true;
-    eyeVideo.currentTime = 2.5;
-    eyeVideo.play();
-    eyeVideo.removeAttribute('loop');
-  },
-  onLeaveBack: () => {
-    isProducts = true;
-    isTestimonials = false;
-    eyeVideo.currentTime = 0;
-    eyeVideo.play();
-    eyeVideo.setAttribute('loop', 'true');
-  }
-});
+// ScrollTrigger.create({
+//   trigger: '.reviews-section',
+//   start: 'top 70%',
+//   onEnter: () => {
+//     isTestimonials = true;
+//     eyeVideo.currentTime = 2.5;
+//     eyeVideo.play();
+//     eyeVideo.removeAttribute('loop');
+//   },
+//   onLeaveBack: () => {
+//     isProducts = true;
+//     isTestimonials = false;
+//     eyeVideo.currentTime = 0;
+//     eyeVideo.play();
+//     eyeVideo.setAttribute('loop', 'true');
+//   }
+// });
 
 const changeSlide = () => {
 index = index > slides.length - 2 ? 0 : index;
