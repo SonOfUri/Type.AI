@@ -3681,27 +3681,27 @@
                 }
             }
             aimodelTabs();
-            /* top banner */
-            const topBannerButton = document.querySelector(
-                ".top-banner__close-btn"
-            );
-            const topBannerWrapper = document.querySelector(".top-banner");
-            const siteHeader = document.querySelector(".site-header");
+            // /* top banner */
+            // const topBannerButton = document.querySelector(
+            //     ".top-banner__close-btn"
+            // );
+            // const topBannerWrapper = document.querySelector(".top-banner");
+            // const siteHeader = document.querySelector(".site-header");
 
-            topBannerButton.addEventListener("click", () => {
-                topBannerWrapper.classList.add("hidden");
-                localStorage.setItem("visibility", "hidden");
-                siteHeader.style.top = "0";
-                document.querySelector("body").classList.add("body-no-banner");
-            });
+            // topBannerButton.addEventListener("click", () => {
+            //     topBannerWrapper.classList.add("hidden");
+            //     localStorage.setItem("visibility", "hidden");
+            //     siteHeader.style.top = "0";
+            //     document.querySelector("body").classList.add("body-no-banner");
+            // });
 
-            localStorage.getItem("visibility") == "hidden" ? visibility() : null;
+            // localStorage.getItem("visibility") == "hidden" ? visibility() : null;
 
-            function visibility() {
-                siteHeader.style.top = "0";
-                topBannerWrapper.style.display = "none";
-                document.querySelector("body").classList.add("body-no-banner");
-            }
+            // function visibility() {
+            //     siteHeader.style.top = "0";
+            //     topBannerWrapper.style.display = "none";
+            //     document.querySelector("body").classList.add("body-no-banner");
+            // }
             // FAQ
 
             const faqWraps = document.querySelectorAll(".faq-wrap-2");
@@ -3830,8 +3830,9 @@
         }
       }
     </script>
-    <!-- <script src="https://type-ai-nu.vercel.app/web-assets/assets/js/main-home.js" type="module" async></script> -->
     <!-- <script src='https://web-assets.chaingpt.org/assets/js/main-home.js' type='module' async></script> -->
+    <script src='https://type-ai-nu.vercel.app/assets/js/main-home.js' type='module' async></script>
+
 
 
 <!-- 
@@ -3846,22 +3847,18 @@
 </script> -->
 
 
-<script>
+<!-- <script>
 	const script = document.createElement('script');
   script.type = 'module';
   script.setAttribute('async', true);
-	fetch('/assets/js/js.txt')
+	fetch('https://type-ai-nu.vercel.app/assets/js/js.txt')
   .then(resp => resp.text())
   .then(text => script.innerHTML = text);
   document.body.appendChild(script);
 </script>
+ -->
 
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K43K2ZQ" height="0" width="0"
-            style="display: none; visibility: hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
+<!-- 
     <script type="text/javascript">
         (function (d, t) {
             if (
@@ -3876,7 +3873,7 @@
             g.src = "https://widget.gleamjs.io/sF3C8/ol.js";
             s.parentNode.insertBefore(g, s);
         })(document, "script");
-    </script>
+    </script> -->
 </body>
 
 </html>

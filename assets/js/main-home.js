@@ -217,7 +217,9 @@ const tick = () => {
     // Render
     renderer.render(scene, camera);
 
-    mixer ? .update(mixerUpdateDelta);
+    // mixer ? .update(mixerUpdateDelta);
+    mixer && mixer.update(mixerUpdateDelta);
+
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick);
