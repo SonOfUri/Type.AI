@@ -488,6 +488,9 @@ camera.updateProjectionMatrix();
 // Update renderer
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
+
+// Reapply the desired opacity to the 'webgl' element
+gsap.to(webglElement, { opacity: 0, duration: 0.5 }); // Adjust the opacity value as needed
 });
 
 tick();
