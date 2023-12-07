@@ -493,6 +493,30 @@ renderer.setPixelRatio(window.devicePixelRatio);
 tick();
 
 
+// // Replace '.trigger-element' with the selector of the element that serves as the trigger
+// const triggerElement = document.querySelector('.trigger-element');
+
+// // Replace '.webgl' with the selector of the element you want to modify
+// const webglElement = document.querySelector('.webgl');
+
+// // Create a ScrollTrigger
+// gsap.registerPlugin(ScrollTrigger);
+
+// ScrollTrigger.create({
+//     trigger: triggerElement, // Set the trigger element
+//     start: 'top center',     // Set the start position of the trigger
+//     end: 'bottom center',    // Set the end position of the trigger
+//     onEnter: () => {
+//         // Set the opacity of the 'webgl' element to 0 when scrolling down
+//         gsap.to(webglElement, { opacity: 0, duration: 0 });
+//     },
+//     onEnterBack: () => {
+//         // Set the opacity of the 'webgl' element to 1 when scrolling back up
+//         gsap.to(webglElement, { opacity: 1, duration: 0 });
+//     },
+// });
+
+
 // Replace '.trigger-element' with the selector of the element that serves as the trigger
 const triggerElement = document.querySelector('.trigger-element');
 
@@ -507,11 +531,11 @@ ScrollTrigger.create({
     start: 'top center',     // Set the start position of the trigger
     end: 'bottom center',    // Set the end position of the trigger
     onEnter: () => {
-        // Set the opacity of the 'webgl' element to 0 when scrolling down
-        gsap.to(webglElement, { opacity: 0, duration: 0 });
+        // Set the opacity of the 'webgl' element to 0 gradually when scrolling down
+        gsap.to(webglElement, { opacity: 0, duration: 0.5 });
     },
     onEnterBack: () => {
-        // Set the opacity of the 'webgl' element to 1 when scrolling back up
-        gsap.to(webglElement, { opacity: 1, duration: 0 });
+        // Set the opacity of the 'webgl' element to 1 gradually when scrolling back up
+        gsap.to(webglElement, { opacity: 1, duration: 0.5 });
     },
 });
