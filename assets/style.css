@@ -32,10 +32,10 @@ background: linear-gradient(135deg, #fceabb 0%,#f2a100 0%,#f8b500 17%,#f9d16b 28
 
 body {
     margin: 0;
-    background-color: #000000 !important;
-    background-image: url(/assets/blackbg.jpg);
+     background-color: #000000 !important;
+    /* background-image: url(/assets/blackbg.jpg);
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
 /* background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%) !important; */
 }
 article,
@@ -8282,6 +8282,7 @@ background: linear-gradient(135deg, #fceabb 0%,#f2a100 0%,#f8b500 17%,#f9d16b 28
     justify-content: space-between;
     padding-bottom: 20px;
     display: flex;
+    margin-top: 20px;
 }
 .container.product-descr-container {
     width: 100%;
@@ -8310,12 +8311,21 @@ background: linear-gradient(135deg, #fceabb 0%,#f2a100 0%,#f8b500 17%,#f9d16b 28
     right: 0;
     width: 60%
 }
-.container-middle {
-    width: 69.03%;
+.container-middle-x {
+    width: 89.03%;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
+
+.container-middle {
+    width: 49.03%;
+    /* margin-left: auto; */
+    margin-left: 50px;
+    margin-right: auto;
+    display: block;
+}
+
 .container-middle.revolution__container-middle {
     width: 66%;
     height: 100px;
@@ -8389,7 +8399,7 @@ background: linear-gradient(135deg, #fceabb 0%,#f2a100 0%,#f8b500 17%,#f9d16b 28
     position: relative;
 }
 .hero-info {
-    padding-top: 20vh;
+    /* padding-top: 20vh; */
     padding-bottom: 50px;
     display: flex;
 }
@@ -8586,7 +8596,7 @@ background: linear-gradient(135deg, #fceabb 0%,#f2a100 0%,#f8b500 17%,#f9d16b 28
 .hero-bottom {
     z-index: 9;
     align-items: flex-end;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     display: flex;
     position: relative;
 }
@@ -9670,10 +9680,10 @@ background: linear-gradient(135deg, #fceabb 0%,#f2a100 0%,#f8b500 17%,#f9d16b 28
     left: 0;
 }
 .unlimited-solutions {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 16vh;
+    /* padding-top: 16vh; */
     padding-bottom: 30px;
     display: flex;
     position: relative;

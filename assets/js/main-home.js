@@ -9,10 +9,9 @@ const scene = new THREE.Scene();
 const gltfLoader = new GLTFLoader();
 const frustumSize = 534;
 const uvsArray = new Float32Array([1, 1, 0, 1, 0, 0, 1, 0]);
-// const objectUrl = 'https://web-assets.chaingpt.org/assets/3d/chainGPT_robo_BAKED_CYCLE.glb';
-const objectUrl = 'assets/3d/main.glb';
+const objectUrl = 'assets/3d/main2.glb';
 const envMapUrl = 'https://web-assets.chaingpt.org/assets/3d/Cannon_Exterior.hdr';
-// const envMapUrl = '/assets/3d/light.hdr';
+
 
 const buttonClickDelay = 6.5;
 
@@ -40,22 +39,6 @@ products: {
 }
 }
 
-// // shader stuff
-// const eyeVideo = document.getElementById('eye-video');
-// eyeVideo.play();
-// const eyeTexture = new THREE.VideoTexture(eyeVideo);
-// eyeTexture.minFilter = THREE.LinearFilter;
-// eyeTexture.magFilter = THREE.LinearFilter;
-// eyeTexture.format = THREE.RGBAFormat;
-
-// const clickVideo = document.getElementById('click-video');
-// const clickTexture = new THREE.VideoTexture(clickVideo);
-// clickTexture.minFilter = THREE.LinearFilter;
-// clickTexture.magFilter = THREE.LinearFilter;
-// clickTexture.format = THREE.RGBAFormat;
-// clickVideo.onplay = () => {
-// setTimeout(changeSlide, 200);
-// }
 
 const shaderMaterial = new THREE.ShaderMaterial( {
 vertexShader: document.getElementById( 'vertexShader' ).textContent,
@@ -87,22 +70,8 @@ scene.add(light);
 
 gltfLoader.load(objectUrl, (gltf) => {
 bakedMesh = gltf.scene;
-// const screenMesh = bakedMesh.getObjectByName('FACE');
 headMesh = bakedMesh.getObjectByName('mixamorigHead');
-// headInitialRotation.copy(headMesh.rotation);
 
-// screenMesh.geometry.setAttribute('uv', new THREE.BufferAttribute(uvsArray, 2));
-// screenMesh.material = shaderMaterial.clone();
-// screenMesh.material.uniforms = {
-//   videoTexture: { type: 'sampler2D', value: eyeTexture }
-// };
-
-// const buttonMesh = bakedMesh.getObjectByName('TOUCH');
-// buttonMesh.geometry.setAttribute('uv', new THREE.BufferAttribute(uvsArray, 2));
-// buttonMesh.material = shaderMaterial.clone();
-// buttonMesh.material.uniforms = {
-//   videoTexture: { type: 'sampler2D', value: clickTexture }
-// };
 
 if (gltf.animations.length) {
   mixer = new THREE.AnimationMixer(gltf.scene);
@@ -213,14 +182,6 @@ mixer?.update(mixerUpdateDelta);
 window.requestAnimationFrame(tick);
 };
 
-// eyeVideo.addEventListener('timeupdate', (e) => {
-// if (eyeVideo.currentTime >= 2.5 && !isTestimonials) {
-//   eyeVideo.currentTime = 0;
-// }
-// if (animationAction && animationAction.time >= buttonClickDelay && animationAction.time <= buttonClickDelay + 0.5) {
-//   clickVideo.play();
-// }
-// });
 
 const getMouseDegrees = (x, y, degreeLimit) => {
 let dx = 0,
@@ -299,64 +260,65 @@ ScrollTrigger.create({
   }
 });
 
-// ScrollTrigger.create({
-//   trigger: '.reviews-section',
-//   start: 'top 70%',
-//   onEnter: () => {
-//     isTestimonials = true;
-//     eyeVideo.currentTime = 2.5;
-//     eyeVideo.play();
-//     eyeVideo.removeAttribute('loop');
+// const cameraAnimation = (progress) => {
+// if (isCameraAnimInProgress) {
+//   return;
+// }
+
+// const targetYPos = positioning[screens[0]].targetVector.y + progress * (positioning[screens[1]].targetVector.y - positioning[screens[0]].targetVector.y);
+
+// gsap.to(camera, {
+//   zoom: positioning[screens[0]].zoom + progress * (positioning[screens[1]].zoom - positioning[screens[0]].zoom)
+// });
+
+// gsap.to(camera.position, {
+//   x: positioning[screens[0]].camera.x + progress * (positioning[screens[1]].camera.x - positioning[screens[0]].camera.x),
+//   y: positioning[screens[0]].camera.y + progress * (positioning[screens[1]].camera.y - positioning[screens[0]].camera.y),
+//   z: positioning[screens[0]].camera.z + progress * (positioning[screens[1]].camera.z - positioning[screens[0]].camera.z),
+//   onUpdate: () => {
+//     targetVector.set(0, targetYPos, 0);
+//     camera.lookAt(targetVector);
+//     camera.updateProjectionMatrix();
 //   },
-//   onLeaveBack: () => {
-//     isProducts = true;
-//     isTestimonials = false;
-//     eyeVideo.currentTime = 0;
-//     eyeVideo.play();
-//     eyeVideo.setAttribute('loop', 'true');
+//   onComplete: () => {
+//     initialPos.copy(camera.position);
+//     initialRot.copy(camera.rotation);
+//     // eyeVideo.currentTime = 2.5;
+//     isCameraAnimInProgress = false;
 //   }
 // });
 
-// const changeSlide = () => {
-// index = index > slides.length - 2 ? 0 : index;
-// slides.forEach((slide, i) => {
-//   index === i ? slide.classList.add('active') : slide.classList.remove('active');
-// });
-// index++;
-// }
-
-// changeSlide();
-
 const cameraAnimation = (progress) => {
-if (isCameraAnimInProgress) {
-  return;
-}
-
-const targetYPos = positioning[screens[0]].targetVector.y + progress * (positioning[screens[1]].targetVector.y - positioning[screens[0]].targetVector.y);
-
-gsap.to(camera, {
-  zoom: positioning[screens[0]].zoom + progress * (positioning[screens[1]].zoom - positioning[screens[0]].zoom)
-});
-
-gsap.to(camera.position, {
-  x: positioning[screens[0]].camera.x + progress * (positioning[screens[1]].camera.x - positioning[screens[0]].camera.x),
-  y: positioning[screens[0]].camera.y + progress * (positioning[screens[1]].camera.y - positioning[screens[0]].camera.y),
-  z: positioning[screens[0]].camera.z + progress * (positioning[screens[1]].camera.z - positioning[screens[0]].camera.z),
-  onUpdate: () => {
-    targetVector.set(0, targetYPos, 0);
-    camera.lookAt(targetVector);
-    camera.updateProjectionMatrix();
-  },
-  onComplete: () => {
-    initialPos.copy(camera.position);
-    initialRot.copy(camera.rotation);
-    // eyeVideo.currentTime = 2.5;
-    isCameraAnimInProgress = false;
+  if (isCameraAnimInProgress) {
+    return;
   }
-});
 
-animationAction?.setEffectiveWeight(1 - progress);
-}
+  const targetYPos = positioning[screens[1]].targetVector.y + progress * (positioning[screens[0]].targetVector.y - positioning[screens[1]].targetVector.y);
+
+  gsap.to(camera, {
+    zoom: positioning[screens[1]].zoom + progress * (positioning[screens[0]].zoom - positioning[screens[1]].zoom)
+  });
+
+  gsap.to(camera.position, {
+    x: positioning[screens[1]].camera.x + progress * (positioning[screens[0]].camera.x - positioning[screens[1]].camera.x),
+    y: positioning[screens[1]].camera.y + progress * (positioning[screens[0]].camera.y - positioning[screens[1]].camera.y),
+    z: positioning[screens[1]].camera.z + progress * (positioning[screens[0]].camera.z - positioning[screens[1]].camera.z),
+    onUpdate: () => {
+      targetVector.set(0, targetYPos, 0);
+      camera.lookAt(targetVector);
+      camera.updateProjectionMatrix();
+    },
+    onComplete: () => {
+      initialPos.copy(camera.position);
+      initialRot.copy(camera.rotation);
+      isCameraAnimInProgress = false;
+    }
+  });
+};
+
+
+// animationAction?.setEffectiveWeight(1 - progress);
+// }
 
 const updatePointsData = () => {
 const offset = new THREE.Vector3();
@@ -450,32 +412,11 @@ gsap.to(sphericalDelta, {
   }
 });
 
-// if (isProducts) {
-//   const degrees = getMouseDegrees(e.clientX, e.clientY, 10);
-
-//   gsap.to(headMesh.rotation, {
-//     x: THREE.MathUtils.degToRad(degrees.y) * 1.5,
-//     y: THREE.MathUtils.degToRad(degrees.x) * 1.5,
-//     duration: 0.1
-//   });
-// }
-
-// updateEyesPos(e);
 
 updatePointsData();
 });
 
-// const updateEyesPos = (e) => {
-//   const pupils = document.querySelector('.pupils');
-//   const rect = pupils.getBoundingClientRect();
-//   if (rect.top > window.innerHeight) {
-//     return;
-//   }
-//   const x = (e.clientX - rect.left) / 40 + "px";
-//   const y = (e.clientY - rect.top) / 15 + "px";
-//   pupils.style.transform = "translate3d(" + x + "," + y + ", 0px)";
-// }
-
+// 
 window.addEventListener("resize", () => {
 // Update camera
 const aspect = window.innerWidth / window.innerHeight;
@@ -496,30 +437,6 @@ gsap.to(webglElement, { opacity: 0, duration: 0.5 }); // Adjust the opacity valu
 tick();
 
 
-// // Replace '.trigger-element' with the selector of the element that serves as the trigger
-// const triggerElement = document.querySelector('.trigger-element');
-
-// // Replace '.webgl' with the selector of the element you want to modify
-// const webglElement = document.querySelector('.webgl');
-
-// // Create a ScrollTrigger
-// gsap.registerPlugin(ScrollTrigger);
-
-// ScrollTrigger.create({
-//     trigger: triggerElement, // Set the trigger element
-//     start: 'top center',     // Set the start position of the trigger
-//     end: 'bottom center',    // Set the end position of the trigger
-//     onEnter: () => {
-//         // Set the opacity of the 'webgl' element to 0 when scrolling down
-//         gsap.to(webglElement, { opacity: 0, duration: 0 });
-//     },
-//     onEnterBack: () => {
-//         // Set the opacity of the 'webgl' element to 1 when scrolling back up
-//         gsap.to(webglElement, { opacity: 1, duration: 0 });
-//     },
-// });
-
-
 // Replace '.trigger-element' with the selector of the element that serves as the trigger
 const triggerElement = document.querySelector('.trigger-element');
 
@@ -531,14 +448,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.create({
     trigger: triggerElement, // Set the trigger element
-    start: 'top center',     // Set the start position of the trigger
-    end: 'bottom center',    // Set the end position of the trigger
-    onEnter: () => {
-        // Set the opacity of the 'webgl' element to 0 gradually when scrolling down
-        gsap.to(webglElement, { opacity: 0, duration: 0.5 });
-    },
-    onEnterBack: () => {
-        // Set the opacity of the 'webgl' element to 1 gradually when scrolling back up
-        gsap.to(webglElement, { opacity: 1, duration: 0.5 });
+    start: 'top top',        // Set the start position of the trigger
+    end: 'bottom top',       // Set the end position of the trigger
+    onUpdate: (self) => {
+        // Calculate opacity based on scroll position
+        const opacity = 1 - self.progress;
+        
+        // Set the opacity of the 'webgl' element
+        gsap.to(webglElement, { opacity: opacity, duration: 0 });
     },
 });
