@@ -492,25 +492,6 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 tick();
 
-// // Replace '.trigger-element' with the selector of the element that serves as the trigger
-// const triggerElement = document.querySelector('.trigger-element');
-
-// // Replace '.webgl' with the selector of the element you want to modify
-// const webglElement = document.querySelector('.webgl');
-
-// // Create a ScrollTrigger
-// gsap.registerPlugin(ScrollTrigger);
-
-// ScrollTrigger.create({
-//     trigger: triggerElement, // Set the trigger element
-//     start: 'top center',     // Set the start position of the trigger
-//     end: 'bottom center',    // Set the end position of the trigger
-//     onToggle: ({ isActive }) => {
-//         // Set the opacity of the 'webgl' element immediately when the trigger is crossed
-//         gsap.to(webglElement, { opacity: isActive ? 1 : 0, duration: 0 });
-//     }
-// });
-
 
 // Replace '.trigger-element' with the selector of the element that serves as the trigger
 const triggerElement = document.querySelector('.trigger-element');
