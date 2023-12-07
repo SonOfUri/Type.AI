@@ -13,6 +13,8 @@ const objectUrl = 'assets/3d/main2.glb';
 const envMapUrl = 'https://web-assets.chaingpt.org/assets/3d/Cannon_Exterior.hdr';
 
 
+
+
 const buttonClickDelay = 6.5;
 
 // mouse interaction variables

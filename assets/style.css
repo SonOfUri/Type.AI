@@ -9789,6 +9789,7 @@ background: linear-gradient(135deg, #fceabb 0%,#f2a100 0%,#f8b500 17%,#f9d16b 28
     padding-top: 12vh;
     padding-bottom: 8vh;
     overflow: hidden;
+    background-color: #000 !important;
 }
 .token-intro {
     width: 84.5%;
