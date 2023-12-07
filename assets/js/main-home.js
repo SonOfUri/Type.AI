@@ -10,8 +10,10 @@ const gltfLoader = new GLTFLoader();
 const frustumSize = 534;
 const uvsArray = new Float32Array([1, 1, 0, 1, 0, 0, 1, 0]);
 // const objectUrl = 'https://web-assets.chaingpt.org/assets/3d/chainGPT_robo_BAKED_CYCLE.glb';
-const objectUrl = 'assets/3d/old.glb';
+const objectUrl = 'assets/3d/latest.glb';
 const envMapUrl = 'https://web-assets.chaingpt.org/assets/3d/Cannon_Exterior.hdr';
+// const envMapUrl = '/assets/3d/light.hdr';
+
 const buttonClickDelay = 6.5;
 
 // mouse interaction variables
@@ -87,7 +89,7 @@ gltfLoader.load(objectUrl, (gltf) => {
 bakedMesh = gltf.scene;
 // const screenMesh = bakedMesh.getObjectByName('FACE');
 headMesh = bakedMesh.getObjectByName('mixamorigHead');
-headInitialRotation.copy(headMesh.rotation);
+// headInitialRotation.copy(headMesh.rotation);
 
 // screenMesh.geometry.setAttribute('uv', new THREE.BufferAttribute(uvsArray, 2));
 // screenMesh.material = shaderMaterial.clone();
@@ -315,15 +317,15 @@ ScrollTrigger.create({
 //   }
 // });
 
-const changeSlide = () => {
-index = index > slides.length - 2 ? 0 : index;
-slides.forEach((slide, i) => {
-  index === i ? slide.classList.add('active') : slide.classList.remove('active');
-});
-index++;
-}
+// const changeSlide = () => {
+// index = index > slides.length - 2 ? 0 : index;
+// slides.forEach((slide, i) => {
+//   index === i ? slide.classList.add('active') : slide.classList.remove('active');
+// });
+// index++;
+// }
 
-changeSlide();
+// changeSlide();
 
 const cameraAnimation = (progress) => {
 if (isCameraAnimInProgress) {

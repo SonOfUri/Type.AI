@@ -595,7 +595,7 @@
             .custom-slider-arrow--top.w-slider-arrow-left,
             .custom-slider-arrow--top.w-slider-arrow-right {
                 top: 100%;
-                    /* border-bottom: 1px solid #353539; */
+                /* border-bottom: 1px solid #353539; */
 
             }
 
@@ -1442,7 +1442,7 @@
         <!-- Item 2 -->
         <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle" />
         <label for="slide-item-2">
-            <p class="icon"><i class='bx bxs-info-circle' ></i></p><span>About</span>
+            <p class="icon"><i class='bx bxs-info-circle'></i></p><span>About</span>
         </label>
 
         <!-- Item 3 -->
@@ -1454,7 +1454,7 @@
         <!-- Item 4 -->
         <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle" />
         <label for="slide-item-4">
-            <p class="icon"><i class='bx bxs-message-square-dots' ></i></p><span>Socials</span>
+            <p class="icon"><i class='bx bxs-message-square-dots'></i></p><span>Socials</span>
         </label>
 
         <div class="clear"></div>
@@ -1465,6 +1465,334 @@
         </div>
 
     </nav>
+
+    <div data-animation="over-right" data-collapse="none" data-duration="400" data-easing="ease" data-easing2="ease"
+        data-doc-height="1" role="banner" class="aside-navbar short-mode w-nav">
+        <div class="aside-navigation-styles w-embed">
+            <style>
+                /* aside menu */
+                .aside-menu-is-opened .aside-navbar {
+                    animation: showFullAside 0.75s linear forwards;
+                }
+
+                .aside-menu-is-closed .aside-navbar {
+                    animation: closeFullAside 0.75s linear forwards;
+                }
+
+                @keyframes showFullAside {
+                    0% {
+                        opacity: 1;
+                        transform: translate(0, 0);
+                    }
+
+                    10% {
+                        opacity: 0;
+                        transform: translate(0, 0);
+                    }
+
+                    40% {
+                        opacity: 0;
+                        transform: translate(200%, 0);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translate(0, 0);
+                    }
+                }
+
+                @keyframes closeFullAside {
+                    0% {
+                        opacity: 1;
+                        transform: translate(0, 0);
+                    }
+
+                    55% {
+                        opacity: 0;
+                        transform: translate(200%, 0);
+                    }
+
+                    60% {
+                        opacity: 0;
+                        transform: translate(200%, 0);
+                    }
+
+                    100% {
+                        opacity: 1;
+                        transform: translate(0, 0);
+                    }
+                }
+
+                .short-mode.aside-navbar {
+                    pointer-events: none;
+                }
+
+                .short-mode.aside-navbar .aside-menu-btn,
+                .short-mode.aside-navbar .aside-navbar-container {
+                    pointer-events: auto;
+                }
+
+                .full-mode.aside-navbar {
+                    right: 12px;
+                    width: 14.625rem;
+                }
+
+                .full-mode .aside-navbar-inner {
+                    width: 100%;
+                    background: #09090E;
+                    border: 1px solid #353539;
+                    justify-content: flex-end;
+                }
+
+                .full-mode.aside-navbar .aside-menu-btn {
+                    display: none;
+                }
+
+                .full-mode .aside-nav-menu {
+                    margin-right: 0;
+                    padding: 0 16px;
+                    width: 100%;
+                }
+
+                .short-mode .aside-navbar-head {
+                    display: none;
+                }
+
+                .aside-navbar-head:before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    background: linear-gradient(to right, #724CE8 -2.59%, #26F4D0 31.53%, #F8CF3E 62.52%, #FC6756 100%);
+                    content: "";
+                }
+
+                .aside-nav-item {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    white-space: nowrap;
+                }
+
+                .short-mode .aside-nav-item {
+                    margin: 1px 0;
+                    width: 1.375rem;
+                    height: 1.3125rem;
+                    justify-content: center;
+                    transition: margin-bottom .3s .5s;
+                }
+
+                .short-mode .aside-nav-item.w--current {
+                    margin-bottom: 1.5rem;
+                }
+
+                .short-mode .aside-nav-item:after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: url(https://assets-global.website-files.com/6433c1e83f44a7af5475c0f3/644946e0461883b589ffbeba_current-1.png) no-repeat 0 0 / cover;
+                    content: "";
+                    opacity: 0;
+                    transition: opacity .3s .5s;
+                }
+
+                .short-mode .aside-nav-item.w--current:after {
+                    opacity: 1;
+                }
+
+                .short-mode .aside-nav-item:before {
+                    display: block;
+                    width: 0.25rem;
+                    height: 0.25rem;
+                    border-radius: 50%;
+                    background: #EFEFE5;
+                    opacity: 0.25;
+                    transition: opacity .2s;
+                    content: "";
+                }
+
+                .short-mode .aside-nav-item:hover:before {
+                    opacity: .7;
+                }
+
+                .short-mode .aside-nav-item.w--current:before {
+                    opacity: 1;
+                }
+
+                .short-mode .aside-nav-link-inner {
+                    position: absolute;
+                    top: 100%;
+                    right: 0;
+                    margin: 5px 0 0;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+
+                .short-mode .aside-nav-item.w--current .aside-nav-link-inner {
+                    transition: opacity .3s .5s;
+                    opacity: 1;
+                }
+
+                .full-mode .aside-nav-link-inner {
+                    position: relative;
+                    transition: padding .3s .5s;
+                }
+
+                .full-mode .aside-nav-item.w--current .aside-nav-link-inner {
+                    padding: 0 0.75rem;
+                }
+
+                .full-mode .aside-nav-link-inner:after,
+                .full-mode .aside-nav-link-inner:before {
+                    position: absolute;
+                    width: .5rem;
+                    height: .5rem;
+                    content: "";
+                    background: url(https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/644fa7cd9bc7d5ed92d90f21_corner-top-left.svg) no-repeat 0 0 / cover;
+                    opacity: 0;
+                    transition: opacity .3s .5s;
+                }
+
+                .full-mode .aside-nav-link-inner:before {
+                    top: 0;
+                    right: 0;
+                    transform: rotate(90deg);
+                }
+
+                .full-mode .aside-nav-link-inner:after {
+                    bottom: 0;
+                    left: 0;
+                    transform: rotate(-90deg);
+                }
+
+                .full-mode .aside-nav-item.w--current .aside-nav-link-inner:after,
+                .full-mode .aside-nav-item.w--current .aside-nav-link-inner:before {
+                    opacity: 1;
+                }
+
+                .full-mode .aside-nav-item {
+                    width: 100%;
+                    justify-content: flex-end;
+                    font-size: 1.125rem;
+                    margin-bottom: 1rem;
+                    opacity: 0.35;
+                    transition: opacity .2s;
+                }
+
+                .full-mode .aside-nav-item:hover {
+                    opacity: .7;
+                }
+
+                .full-mode .aside-nav-item.w--current {
+                    opacity: 1;
+                }
+
+                .full-mode .aside-nav-item:before {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    width: 0.375rem;
+                    height: 0.375rem;
+                    background: url(https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/6475c21b8be0c640d5a29c45_ico-bullet-bright.svg) no-repeat 0 0 / contain;
+                    opacity: 0;
+                    content: "";
+                }
+
+                .full-mode .aside-nav-item.w--current:before {
+                    opacity: 1;
+                    transition: opacity .2s .5s;
+                }
+
+                .w-nav-overlay {
+                    background: #09090E;
+                }
+
+                .aside-navbar .w-nav-overlay {
+                    position: fixed;
+                    right: -12px;
+                    top: -12px;
+                    width: 100vw;
+                    bottom: -12px;
+                    z-index: -1;
+                    opacity: 0;
+                    display: none;
+                }
+
+                .aside-menu-is-opened .aside-navbar .w-nav-overlay {
+                    display: block;
+                    width: 120vw;
+                    animation: overlayFadeIn 0.5s linear forwards;
+                }
+
+                @keyframes overlayFadeIn {
+                    0% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 0.8;
+                    }
+                }
+
+                @media screen and (max-width: 991px) {
+                    .short-mode .aside-nav-item.w--current {
+                        margin-bottom: 0;
+                    }
+
+                    .short-mode .aside-nav-item .aside-nav-link-inner {
+                        display: none;
+                    }
+
+                    .short-mode .aside-nav-item:before {
+                        min-width: 5px;
+                        min-height: 5px;
+                    }
+                }
+
+                @media screen and (max-width: 767px) {
+                    .short-mode .aside-nav-menu {
+                        display: none;
+                    }
+                }
+            </style>
+        </div>
+        <div class="aside-navbar-inner">
+            <div class="aside-navbar-head">
+                <div>ALL SECTIONS</div><a href="#" class="aside-menu-btn-close js-close-aside-menu w-inline-block"><img
+                        src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/644a7458b64f4040a7ca1446_ico-close.svg"
+                        loading="lazy" alt="IDO Closed Icon" class="aside-menu-ico-close"></a>
+            </div>
+            <div class="aside-navbar-container w-container">
+                <nav role="navigation" class="aside-nav-menu w-nav-menu">
+                    <a href="#intro" rel="noopener noreferrer" class="aside-nav-item w-inline-block w--current">
+                        <div class="aside-nav-link-inner">Intro</div>
+                    </a>
+                    <a href="#roadmap" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+                        <div class="aside-nav-link-inner">Roadmap</div>
+                    </a>
+                    <a href="#faq" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+                        <div class="aside-nav-link-inner">F.A.Q</div>
+                    </a>
+                    <a href="#ai-revolution" rel="noopener noreferrer" class="aside-nav-item w-inline-block">
+                        <div class="aside-nav-link-inner">Join</div>
+                    </a>
+                </nav>
+            </div>
+            <a href="#" class="aside-menu-btn js-open-aside-menu w-inline-block"><img
+                    src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/644a7458b64f40e4ecca1445_ico-menu.svg"
+                    loading="lazy" alt="menu icon" class="aside-menu-icon">
+                <div class="aside-menu-text">Menu</div><img
+                    src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/64d5f0cef6ef9661213bf0f1_sections-btn.svg"
+                    loading="lazy" width="14" height="96" alt="Sections" class="nav-section-btn">
+            </a>
+        </div>
+        <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-2"></div>
+    </div>
 
     <div class="webgl"></div>
 
@@ -1516,8 +1844,8 @@
                                 }
                             </style>
                             <div class="hero-slider-inner">
-                                <div class="hero-slide">
-                                    <h3 class="js-typewrite anim-typewrite"> </h3>
+                                <div class="hero-slide active">
+                                    <h3 class="js-typewrite anim-typewrite">Type</h3>
                                 </div>
                                 <script>
                                     var i = 0;
@@ -1545,8 +1873,29 @@
                             <div class="hero-slide-fade"></div>
                             <div class="corner corner--bottom-left hero-corner">
                                 <img src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d34b8dffd28d_corner.svg"
-                                    loading="lazy" alt="" class="corner-img corner-img--bottom-left" />
+                                    loading="lazy" alt="" class="corner-img corner-img--bottom-left">
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-info-right">
+                        <div class="hero-feature"><img
+                                src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d3e0dcffd28b_ico-indicator.svg"
+                                loading="lazy" alt="">
+                            <p class="paragraph hero-feature-paragraph">DEVELOPMENT</p>
+                        </div>
+                        <div class="hero-feature"><img
+                                src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d3e0dcffd28b_ico-indicator.svg"
+                                loading="lazy" alt="">
+                            <p class="paragraph hero-feature-paragraph">MARKET ANALYSIS</p>
+                        </div>
+                        <div class="hero-feature"><img
+                                src="https://assets-global.website-files.com/64354b8ce4872ad8cd1c7b04/643550c922d6d3e0dcffd28b_ico-indicator.svg"
+                                loading="lazy" alt="">
+                            <p class="paragraph hero-feature-paragraph">AI TRADING</p>
+                        </div>
+                        <div class="hero-feature transparent">
+                            <p class="paragraph hero-feature-paragraph">AND MUCH MORE</p>
                         </div>
                     </div>
                 </div>
@@ -1743,19 +2092,21 @@
         </div>
         <div class="product-track-descr">
             <div class="container product-descr-container">
-                <div data-w-id="da52946c-a4c6-114f-c5f2-cbcfb26bca68" class="product-heading-col">
+                <div data-w-id="da52946c-a4c6-114f-c5f2-cbcfb26bca68" class="product-heading-col"
+                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
                     <div class="section-heading">
                         <div class="section-heading-dot section-heading-dot-1"></div>
                         <div class="section-heading-dot section-heading-dot-2"></div>
                         <div class="w-embed">
                             <h2 class="section-title">
-                                <span class="section-title-bordered text-size-10-mobile" anim-trigger>
+                                <span class="section-title-bordered text-size-10-mobile is-animated" anim-trigger="">
                                     <span class="section-title-bordered-line section-title-bordered-line-1">
                                         <span class="section-title-bordered-line section-title-bordered-line-2"
-                                            anim-trigger-text>AI-Powered</span>
-                                    </span> </span><br />
-                                <span anim-trigger><span anim-trigger-text>DeFi Control</span></span>
-                                <br />
+                                            anim-trigger-text="">Your Gateway</span>
+                                    </span>
+                                </span><br>
+                                <span anim-trigger="" class="is-animated"><span anim-trigger-text="">To Web3
+                                        AI</span></span> <br>
                             </h2>
                             <style>
                                 @media screen and (max-width: 470px) {
@@ -1767,9 +2118,10 @@
                         </div>
                     </div>
                 </div>
-                
+                <div data-w-id="da52946c-a4c6-114f-c5f2-cbcfb26bca6d" class="product-track-slogan"
+                    style="opacity: 1; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg); transform-style: preserve-3d;">
+                    For individuals, developers, and businesses.</div>
             </div>
-            <div class="product-descr-shadow"></div>
         </div>
     </div>
 
@@ -1823,16 +2175,18 @@
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
-                                    <a scramble-link="" rel="noopener noreferrer" href="#"
-                                        target="_blank" class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">TRY IN WEB APP</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
+                                    <a scramble-link="" rel="noopener noreferrer" href="#" target="_blank"
+                                        class="link-more link-more--sm w-inline-block">
+                                        <div scramble-text="">TRY IN WEB APP</div><i style="font-size: 20px;"
+                                            class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                                 <div class="solutions-actions-row">
                                     <a scramble-link="" rel="noopener noreferrer nofollow"
                                         href="https://t.me/TypeAIai_bot" target="_blank"
                                         class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">TRY IN TELEGRAM</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
+                                        <div scramble-text="">TRY IN TELEGRAM</div><i style="font-size: 20px;"
+                                            class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -1873,7 +2227,8 @@
                                 <div class="solutions-actions-row">
                                     <a scramble-link="" rel="noopener noreferrer" href="/assets/WHITEPAPER 23.pdf"
                                         target="_blank" class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">Whitepaper</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
+                                        <div scramble-text="">Whitepaper</div><i style="font-size: 20px;"
+                                            class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -1913,9 +2268,10 @@
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
-                                    <a scramble-link="" rel="noopener noreferrer" href="#"
-                                        target="_blank" class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">TRY NOW</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
+                                    <a scramble-link="" rel="noopener noreferrer" href="#" target="_blank"
+                                        class="link-more link-more--sm w-inline-block">
+                                        <div scramble-text="">TRY NOW</div><i style="font-size: 20px;"
+                                            class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -1953,9 +2309,10 @@
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
-                                    <a scramble-link="" rel="noopener noreferrer" href="#"
-                                        target="_blank" class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">TRY NOW</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
+                                    <a scramble-link="" rel="noopener noreferrer" href="#" target="_blank"
+                                        class="link-more link-more--sm w-inline-block">
+                                        <div scramble-text="">TRY NOW</div><i style="font-size: 20px;"
+                                            class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -2068,10 +2425,10 @@
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
-                                    <a scramble-link="" rel="noopener noreferrer"
-                                        href="#" target="_blank"
+                                    <a scramble-link="" rel="noopener noreferrer" href="#" target="_blank"
                                         class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">Enter API Dashbaord</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
+                                        <div scramble-text="">Enter API Dashbaord</div><i style="font-size: 20px;"
+                                            class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -2110,9 +2467,10 @@
                             </div>
                             <div class="solutions-actions">
                                 <div class="solutions-actions-row">
-                                    <a scramble-link="" rel="noopener noreferrer" href="#"
-                                        target="_blank" class="link-more link-more--sm w-inline-block">
-                                        <div scramble-text="">Enter TypeAI Pad</div><i style="font-size: 20px;" class='bx bxs-right-top-arrow-circle'></i>
+                                    <a scramble-link="" rel="noopener noreferrer" href="#" target="_blank"
+                                        class="link-more link-more--sm w-inline-block">
+                                        <div scramble-text="">Enter TypeAI Pad</div><i style="font-size: 20px;"
+                                            class='bx bxs-right-top-arrow-circle'></i>
                                     </a>
                                 </div>
                             </div>
@@ -2210,10 +2568,27 @@
                     </div>
                 </div>
             </div>
+
+            <style>
+                .floating-object {
+
+                    animation: floatAnimation 5s infinite alternate;
+                }
+
+                @keyframes floatAnimation {
+                    0% {
+                        transform: translate(0, 0);
+                    }
+
+                    100% {
+                        transform: translate(50px, 50px);
+                    }
+                }
+            </style>
             <div class="container-middle">
                 <div data-w-id="a6bdb918-c93f-0690-047b-9d08b602e08a" style="opacity: 0" class="ecosystem-banner">
                     <img src="/assets/blockchain.png" loading="lazy" alt="The Ecosystem behind TypeAi"
-                        class="image-1016" />
+                        class="image-1016 floating-object" />
                     <div class="ecosystem-number nb-1">01</div>
                     <div class="ecosystem-number nb-2">02</div>
                     <div class="ecosystem-number nb-3">03</div>
@@ -2977,7 +3352,7 @@
         });
     </script>
     <style>
-        .breaker{
+        .breaker {
             height: 250px !important;
             display: block;
         }
