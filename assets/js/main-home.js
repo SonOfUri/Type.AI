@@ -10,7 +10,7 @@ const gltfLoader = new GLTFLoader();
 const frustumSize = 534;
 const uvsArray = new Float32Array([1, 1, 0, 1, 0, 0, 1, 0]);
 // const objectUrl = 'https://web-assets.chaingpt.org/assets/3d/chainGPT_robo_BAKED_CYCLE.glb';
-const objectUrl = 'assets/3d/latest.glb';
+const objectUrl = 'assets/3d/main.glb';
 const envMapUrl = 'https://web-assets.chaingpt.org/assets/3d/Cannon_Exterior.hdr';
 // const envMapUrl = '/assets/3d/light.hdr';
 
@@ -350,7 +350,7 @@ gsap.to(camera.position, {
   onComplete: () => {
     initialPos.copy(camera.position);
     initialRot.copy(camera.rotation);
-    eyeVideo.currentTime = 2.5;
+    // eyeVideo.currentTime = 2.5;
     isCameraAnimInProgress = false;
   }
 });
@@ -450,15 +450,15 @@ gsap.to(sphericalDelta, {
   }
 });
 
-if (isProducts) {
-  const degrees = getMouseDegrees(e.clientX, e.clientY, 10);
+// if (isProducts) {
+//   const degrees = getMouseDegrees(e.clientX, e.clientY, 10);
 
-  gsap.to(headMesh.rotation, {
-    x: THREE.MathUtils.degToRad(degrees.y) * 1.5,
-    y: THREE.MathUtils.degToRad(degrees.x) * 1.5,
-    duration: 0.1
-  });
-}
+//   gsap.to(headMesh.rotation, {
+//     x: THREE.MathUtils.degToRad(degrees.y) * 1.5,
+//     y: THREE.MathUtils.degToRad(degrees.x) * 1.5,
+//     duration: 0.1
+//   });
+// }
 
 // updateEyesPos(e);
 
