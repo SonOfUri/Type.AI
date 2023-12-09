@@ -9,7 +9,7 @@ const scene = new THREE.Scene();
 const gltfLoader = new GLTFLoader();
 const frustumSize = 534;
 const uvsArray = new Float32Array([1, 1, 0, 1, 0, 0, 1, 0]);
-const objectUrl = 'assets/3d/main2.glb';
+const objectUrl = 'assets/3d/whiteBot.glb';
 const envMapUrl = 'https://web-assets.chaingpt.org/assets/3d/Cannon_Exterior.hdr';
 
 
@@ -295,10 +295,10 @@ const cameraAnimation = (progress) => {
     return;
   }
 
-  const targetYPos = positioning[screens[1]].targetVector.y + progress * (positioning[screens[0]].targetVector.y - positioning[screens[1]].targetVector.y);
+  const targetYPos = positioning[screens[1]].targetVector.y + progress * (positioning[screens[1]].targetVector.y - positioning[screens[1]].targetVector.y);
 
   gsap.to(camera, {
-    zoom: positioning[screens[1]].zoom + progress * (positioning[screens[0]].zoom - positioning[screens[1]].zoom)
+    zoom: positioning[screens[0]].zoom + progress * (positioning[screens[1]].zoom - positioning[screens[0]].zoom)
   });
 
   gsap.to(camera.position, {
@@ -389,8 +389,8 @@ document.body.addEventListener(evt, () => {
 
 document.addEventListener('mousemove', e => {
 rotateEnd.set(e.clientX, e.clientY);
-
-rotateDelta.subVectors(rotateEnd, rotateStart).multiplyScalar(0.05);
+// CHANGE TRACKER 1 (0.05)
+rotateDelta.subVectors(rotateEnd, rotateStart).multiplyScalar(0.01);
 
 rotateStart.copy(rotateEnd);
 
